@@ -10,23 +10,78 @@ Fork and clone this repo. On your fork, answer and commit the follow questions. 
 - Add two more countries to your dictionary.
 
 - Translate at least 3 of the capital names into another language.
+```
+var citiesDict = ["Philippines":"Manila","Cuba":"Havana", "Guatemala":"Guatemala City"]
+citiesDict["Ghana"] = "Accra"
+citiesDict["Germany"] = "Berlin"
+    print(citiesDict)
 
+citiesDict["Philippines"] = "马尼拉"
+citiesDict["Guatemala"] = "Città del Guatemala"
+citiesDict["Germany"] = "Berlina"
+    print(citiesDict)
+```
 
 ## Question 2
 
 `var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five": 25]`
 
 - Using `someDict`, add together the values associated with "Three" and "Five" and print the result.
-
+```
+var someDict:[String:Int] = ["One": 1, "Two": 4, "Three": 9, "Four": 16, "Five": 25]
+if let sum = someDict["Three"]{
+if let sum1 = someDict["Five"] {
+print(sum + sum1)
+}
+}
+```
 - Add values to the dictionary for the keys "Six" and "Seven".
-
+```
+someDict: ["Seven"] = 47
+someDict: ["Six"] = 38
+print(someDict)
+```
 - Make a key called `productUpToSeven` and set its value equal to the product of all the values.
+```
+if let one = someDict["One"], let two = someDict["Two"], let Three = someDict["Three"], let four = someDict["Four"], let five = someDict["Five"], let six = someDict["Six"] , let seven = someDict["Seven"] {
+someDict["product of Seven"] = one * two * Three * four * five * six * seven
+}
+print(someDict["product of Seven"]!)
+```
 
 - Make a key called `sumUpToSix` and set its value equal to the sum of the keys "One", "Two", "Three", "Four", "Five" and "Six".
+```
+var sum = 0
+for v in someDict.values {
+if let one = someDict["One"], let two = someDict["Two"], let Three = someDict["Three"], let four = someDict["Four"], let five = someDict["Five"], let six = someDict["Six"] {
+sum  += v
+}
+}
+someDict["sumUpToSix"] = sum
+```
 
 - Remove the new keys made in the previous two steps
+```
+someDict["Seven"] = nil
+someDict["Six"] = nil
+```
+
 
 - Add 2 to every value inside of `someDict`.
+```
+if let one = someDict[“One”] , let two = someDict[“Two”] , let three = someDict[“Three”] , let four = someDict[“Four”] , let five = someDict[“Five”] , let six = someDict[“Six”] , let seven = someDict[“Seven”] {
+
+   someDict[“One”] = one + 2
+   someDict[“Two”] = two + 2
+   someDict[“Three”] = three + 2
+   someDict[“Four”] = four + 2
+   someDict[“Five”] = five + 2
+   someDict[“Six”] = six + 2
+   someDict[“Seven”] = seven + 2
+    print(someDict)
+```
+
+
 
 
 ## Question 3
@@ -43,14 +98,29 @@ Create a variable that is explicitly typed as a dictionary that maps strings to 
 
 Using the dictionary created in the previous problem, do the following:
 
+```var boothAuths: [String: Double] = ["Mark Twain":8.9, "Nathaniel Hawthorne":5.1, "John Steinbeck":2.3, "C.S. Lewis":9.9, "Jon Krakauer":6.1]```
+
 - Print out the floating-point score for “John Steinbeck”.
-
+```print(bookAuths["John Steinbeck"]!)
+```
 - Add an additional author named “Erik Larson” with an assigned score of 9.2.
-
+```bookAuths["Erik Larson"] = 9.2
+```
 - Write an if/else statement that compares the score of John Krakaur with Mark Twain. Print out the name of the author with the highest score.
-
+```
+if let john = bookAuths["john"], let mark = bookAuths["mark"] {
+if john > mark {
+    print("John has the higher score")
+}
+} else {
+    print("Mark has the higher score")
+}
+```
 - Use a for-loop to iterate through the dictionary you created at the beginning of the problem, and print out the content in the form of key: value, one entry per line.
-
+```for (names, ratings) in bookAuthors.enumerated() {
+print(names, ratings)
+}
+```
 
 ## Question 4
 
@@ -169,6 +239,18 @@ Print out the dictionary above in the following format:  **full name - score**
 You are given an array of integers. The frequency of a number is the number of times it appears in the array. Find out the frequency of each one.
 
 Print the numbers in ascending order followed by their frequency.
+```
+var out: Array = [0,1,2,2,3]
+var freq: [Int : Int] = [:]
+
+for num in out {
+if freq[num] == nil {
+freq[num] = 1
+}else{
+freq[num] = freq[num] + 1
+}
+}
+```
 
 
 ## Question 8
